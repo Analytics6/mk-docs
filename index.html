@@ -1,0 +1,691 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+    
+    
+      
+        <title>SIMPLIFAID</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#visualization-with-matplotlib" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="SIMPLIFAID" class="md-header__button md-logo" aria-label="SIMPLIFAID" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            SIMPLIFAID
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="SIMPLIFAID" class="md-nav__button md-logo" aria-label="SIMPLIFAID" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    SIMPLIFAID
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-matplotlib-tips" class="md-nav__link">
+    General Matplotlib Tips
+  </a>
+  
+    <nav class="md-nav" aria-label="General Matplotlib Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-matplotlib" class="md-nav__link">
+    Importing Matplotlib
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-styles" class="md-nav__link">
+    Setting Styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-or-no-show-how-to-display-your-plots" class="md-nav__link">
+    show() or No show()? How to Display Your Plots
+  </a>
+  
+    <nav class="md-nav" aria-label="show() or No show()? How to Display Your Plots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotting-from-a-script" class="md-nav__link">
+    Plotting from a script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-from-an-ipython-shell" class="md-nav__link">
+    Plotting from an IPython shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-from-an-ipython-notebook" class="md-nav__link">
+    Plotting from an IPython notebook
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-figures-to-file" class="md-nav__link">
+    Saving Figures to File
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-interfaces-for-the-price-of-one" class="md-nav__link">
+    Two Interfaces for the Price of One
+  </a>
+  
+    <nav class="md-nav" aria-label="Two Interfaces for the Price of One">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matlab-style-interface" class="md-nav__link">
+    MATLAB-style Interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-oriented-interface" class="md-nav__link">
+    Object-oriented interface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general-matplotlib-tips" class="md-nav__link">
+    General Matplotlib Tips
+  </a>
+  
+    <nav class="md-nav" aria-label="General Matplotlib Tips">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#importing-matplotlib" class="md-nav__link">
+    Importing Matplotlib
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setting-styles" class="md-nav__link">
+    Setting Styles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-or-no-show-how-to-display-your-plots" class="md-nav__link">
+    show() or No show()? How to Display Your Plots
+  </a>
+  
+    <nav class="md-nav" aria-label="show() or No show()? How to Display Your Plots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plotting-from-a-script" class="md-nav__link">
+    Plotting from a script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-from-an-ipython-shell" class="md-nav__link">
+    Plotting from an IPython shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plotting-from-an-ipython-notebook" class="md-nav__link">
+    Plotting from an IPython notebook
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-figures-to-file" class="md-nav__link">
+    Saving Figures to File
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-interfaces-for-the-price-of-one" class="md-nav__link">
+    Two Interfaces for the Price of One
+  </a>
+  
+    <nav class="md-nav" aria-label="Two Interfaces for the Price of One">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matlab-style-interface" class="md-nav__link">
+    MATLAB-style Interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#object-oriented-interface" class="md-nav__link">
+    Object-oriented interface
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<!--BOOK_INFORMATION-->
+<p><img align="left" style="padding-right:10px;" src="figures/PDSH-cover-small.png">
+<em>This notebook contains an excerpt from the <a href="http://shop.oreilly.com/product/0636920034919.do">Python Data Science Handbook</a> by Jake VanderPlas; the content is available <a href="https://github.com/jakevdp/PythonDataScienceHandbook">on GitHub</a>.</em></p>
+<p><em>The text is released under the <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/us/legalcode">CC-BY-NC-ND license</a>, and code is released under the <a href="https://opensource.org/licenses/MIT">MIT license</a>. If you find this content useful, please consider supporting the work by <a href="http://shop.oreilly.com/product/0636920034919.do">buying the book</a>!</em></p>
+<p><em>No changes were made to the contents of this notebook from the original.</em></p>
+<!--NAVIGATION-->
+<p>&lt; <a href="03.13-Further-Resources.ipynb">Further Resources</a> | <a href="Index.ipynb">Contents</a> | <a href="04.01-Simple-Line-Plots.ipynb">Simple Line Plots</a> &gt;</p>
+<h1 id="visualization-with-matplotlib">Visualization with Matplotlib</h1>
+<p>We'll now take an in-depth look at the Matplotlib package for visualization in Python.
+Matplotlib is a multi-platform data visualization library built on NumPy arrays, and designed to work with the broader SciPy stack.
+It was conceived by John Hunter in 2002, originally as a patch to IPython for enabling interactive MATLAB-style plotting via gnuplot from the IPython command line.
+IPython's creator, Fernando Perez, was at the time scrambling to finish his PhD, and let John know he wouldn’t have time to review the patch for several months.
+John took this as a cue to set out on his own, and the Matplotlib package was born, with version 0.1 released in 2003.
+It received an early boost when it was adopted as the plotting package of choice of the Space Telescope Science Institute (the folks behind the Hubble Telescope), which financially supported Matplotlib’s development and greatly expanded its capabilities.</p>
+<p>One of Matplotlib’s most important features is its ability to play well with many operating systems and graphics backends.
+Matplotlib supports dozens of backends and output types, which means you can count on it to work regardless of which operating system you are using or which output format you wish.
+This cross-platform, everything-to-everyone approach has been one of the great strengths of Matplotlib.
+It has led to a large user base, which in turn has led to an active developer base and Matplotlib’s powerful tools and ubiquity within the scientific Python world.</p>
+<p>In recent years, however, the interface and style of Matplotlib have begun to show their age.
+Newer tools like ggplot and ggvis in the R language, along with web visualization toolkits based on D3js and HTML5 canvas, often make Matplotlib feel clunky and old-fashioned.
+Still, I'm of the opinion that we cannot ignore Matplotlib's strength as a well-tested, cross-platform graphics engine.
+Recent Matplotlib versions make it relatively easy to set new global plotting styles (see <a href="04.11-Settings-and-Stylesheets.ipynb">Customizing Matplotlib: Configurations and Style Sheets</a>), and people have been developing new packages that build on its powerful internals to drive Matplotlib via cleaner, more modern APIs—for example, Seaborn (discussed in <a href="04.14-Visualization-With-Seaborn.ipynb">Visualization With Seaborn</a>), <a href="http://yhat.github.io/ggpy/">ggpy</a>, <a href="http://holoviews.org/">HoloViews</a>, <a href="http://altair-viz.github.io/">Altair</a>, and even Pandas itself can be used as wrappers around Matplotlib's API.
+Even with wrappers like these, it is still often useful to dive into Matplotlib's syntax to adjust the final plot output.
+For this reason, I believe that Matplotlib itself will remain a vital piece of the data visualization stack, even if new tools mean the community gradually moves away from using the Matplotlib API directly.</p>
+<h2 id="general-matplotlib-tips">General Matplotlib Tips</h2>
+<p>Before we dive into the details of creating visualizations with Matplotlib, there are a few useful things you should know about using the package.</p>
+<h3 id="importing-matplotlib">Importing Matplotlib</h3>
+<p>Just as we use the <code>np</code> shorthand for NumPy and the <code>pd</code> shorthand for Pandas, we will use some standard shorthands for Matplotlib imports:</p>
+<pre><code class="language-python">import matplotlib as mpl
+import matplotlib.pyplot as plt
+</code></pre>
+<p>The <code>plt</code> interface is what we will use most often, as we shall see throughout this chapter.</p>
+<h3 id="setting-styles">Setting Styles</h3>
+<p>We will use the <code>plt.style</code> directive to choose appropriate aesthetic styles for our figures.
+Here we will set the <code>classic</code> style, which ensures that the plots we create use the classic Matplotlib style:</p>
+<pre><code class="language-python">plt.style.use('classic')
+</code></pre>
+<p>Throughout this section, we will adjust this style as needed.
+Note that the stylesheets used here are supported as of Matplotlib version 1.5; if you are using an earlier version of Matplotlib, only the default style is available.
+For more information on stylesheets, see <a href="04.11-Settings-and-Stylesheets.ipynb">Customizing Matplotlib: Configurations and Style Sheets</a>.</p>
+<h3 id="show-or-no-show-how-to-display-your-plots"><code>show()</code> or No <code>show()</code>? How to Display Your Plots</h3>
+<p>A visualization you can't see won't be of much use, but just how you view your Matplotlib plots depends on the context.
+The best use of Matplotlib differs depending on how you are using it; roughly, the three applicable contexts are using Matplotlib in a script, in an IPython terminal, or in an IPython notebook.</p>
+<h4 id="plotting-from-a-script">Plotting from a script</h4>
+<p>If you are using Matplotlib from within a script, the function <code>plt.show()</code> is your friend.
+<code>plt.show()</code> starts an event loop, looks for all currently active figure objects, and opens one or more interactive windows that display your figure or figures.</p>
+<p>So, for example, you may have a file called <em>myplot.py</em> containing the following:</p>
+<pre><code class="language-python"># ------- file: myplot.py ------
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.linspace(0, 10, 100)
+
+plt.plot(x, np.sin(x))
+plt.plot(x, np.cos(x))
+
+plt.show()
+</code></pre>
+<p>You can then run this script from the command-line prompt, which will result in a window opening with your figure displayed:</p>
+<pre><code>$ python myplot.py
+</code></pre>
+<p>The <code>plt.show()</code> command does a lot under the hood, as it must interact with your system's interactive graphical backend.
+The details of this operation can vary greatly from system to system and even installation to installation, but matplotlib does its best to hide all these details from you.</p>
+<p>One thing to be aware of: the <code>plt.show()</code> command should be used <em>only once</em> per Python session, and is most often seen at the very end of the script.
+Multiple <code>show()</code> commands can lead to unpredictable backend-dependent behavior, and should mostly be avoided.</p>
+<h4 id="plotting-from-an-ipython-shell">Plotting from an IPython shell</h4>
+<p>It can be very convenient to use Matplotlib interactively within an IPython shell (see <a href="01.00-IPython-Beyond-Normal-Python.ipynb">IPython: Beyond Normal Python</a>).
+IPython is built to work well with Matplotlib if you specify Matplotlib mode.
+To enable this mode, you can use the <code>%matplotlib</code> magic command after starting <code>ipython</code>:</p>
+<pre><code class="language-ipython">In [1]: %matplotlib
+Using matplotlib backend: TkAgg
+
+In [2]: import matplotlib.pyplot as plt
+</code></pre>
+<p>At this point, any <code>plt</code> plot command will cause a figure window to open, and further commands can be run to update the plot.
+Some changes (such as modifying properties of lines that are already drawn) will not draw automatically: to force an update, use <code>plt.draw()</code>.
+Using <code>plt.show()</code> in Matplotlib mode is not required.</p>
+<h4 id="plotting-from-an-ipython-notebook">Plotting from an IPython notebook</h4>
+<p>The IPython notebook is a browser-based interactive data analysis tool that can combine narrative, code, graphics, HTML elements, and much more into a single executable document (see <a href="01.00-IPython-Beyond-Normal-Python.ipynb">IPython: Beyond Normal Python</a>).</p>
+<p>Plotting interactively within an IPython notebook can be done with the <code>%matplotlib</code> command, and works in a similar way to the IPython shell.
+In the IPython notebook, you also have the option of embedding graphics directly in the notebook, with two possible options:</p>
+<ul>
+<li><code>%matplotlib notebook</code> will lead to <em>interactive</em> plots embedded within the notebook</li>
+<li><code>%matplotlib inline</code> will lead to <em>static</em> images of your plot embedded in the notebook</li>
+</ul>
+<p>For this book, we will generally opt for <code>%matplotlib inline</code>:</p>
+<pre><code class="language-python">%matplotlib inline
+</code></pre>
+<p>After running this command (it needs to be done only once per kernel/session), any cell within the notebook that creates a plot will embed a PNG image of the resulting graphic:</p>
+<pre><code class="language-python">import numpy as np
+x = np.linspace(0, 10, 100)
+
+fig = plt.figure()
+plt.plot(x, np.sin(x), '-')
+plt.plot(x, np.cos(x), '--');
+</code></pre>
+<p><img alt="png" src="04.00-Introduction-To-Matplotlib_files/04.00-Introduction-To-Matplotlib_18_0.png" /></p>
+<h3 id="saving-figures-to-file">Saving Figures to File</h3>
+<p>One nice feature of Matplotlib is the ability to save figures in a wide variety of formats.
+Saving a figure can be done using the <code>savefig()</code> command.
+For example, to save the previous figure as a PNG file, you can run this:</p>
+<pre><code class="language-python">fig.savefig('my_figure.png')
+</code></pre>
+<p>We now have a file called <code>my_figure.png</code> in the current working directory:</p>
+<pre><code class="language-python">!ls -lh my_figure.png
+</code></pre>
+<pre><code>-rw-r--r--  1 jakevdp  staff    16K Aug 11 10:59 my_figure.png
+</code></pre>
+<p>To confirm that it contains what we think it contains, let's use the IPython <code>Image</code> object to display the contents of this file:</p>
+<pre><code class="language-python">from IPython.display import Image
+Image('my_figure.png')
+</code></pre>
+<p><img alt="png" src="04.00-Introduction-To-Matplotlib_files/04.00-Introduction-To-Matplotlib_24_0.png" /></p>
+<p>In <code>savefig()</code>, the file format is inferred from the extension of the given filename.
+Depending on what backends you have installed, many different file formats are available.
+The list of supported file types can be found for your system by using the following method of the figure canvas object:</p>
+<pre><code class="language-python">fig.canvas.get_supported_filetypes()
+</code></pre>
+<pre><code>{'eps': 'Encapsulated Postscript',
+ 'jpeg': 'Joint Photographic Experts Group',
+ 'jpg': 'Joint Photographic Experts Group',
+ 'pdf': 'Portable Document Format',
+ 'pgf': 'PGF code for LaTeX',
+ 'png': 'Portable Network Graphics',
+ 'ps': 'Postscript',
+ 'raw': 'Raw RGBA bitmap',
+ 'rgba': 'Raw RGBA bitmap',
+ 'svg': 'Scalable Vector Graphics',
+ 'svgz': 'Scalable Vector Graphics',
+ 'tif': 'Tagged Image File Format',
+ 'tiff': 'Tagged Image File Format'}
+</code></pre>
+<p>Note that when saving your figure, it's not necessary to use <code>plt.show()</code> or related commands discussed earlier.</p>
+<h2 id="two-interfaces-for-the-price-of-one">Two Interfaces for the Price of One</h2>
+<p>A potentially confusing feature of Matplotlib is its dual interfaces: a convenient MATLAB-style state-based interface, and a more powerful object-oriented interface. We'll quickly highlight the differences between the two here.</p>
+<h4 id="matlab-style-interface">MATLAB-style Interface</h4>
+<p>Matplotlib was originally written as a Python alternative for MATLAB users, and much of its syntax reflects that fact.
+The MATLAB-style tools are contained in the pyplot (<code>plt</code>) interface.
+For example, the following code will probably look quite familiar to MATLAB users:</p>
+<pre><code class="language-python">plt.figure()  # create a plot figure
+
+# create the first of two panels and set current axis
+plt.subplot(2, 1, 1) # (rows, columns, panel number)
+plt.plot(x, np.sin(x))
+
+# create the second panel and set current axis
+plt.subplot(2, 1, 2)
+plt.plot(x, np.cos(x));
+</code></pre>
+<p><img alt="png" src="04.00-Introduction-To-Matplotlib_files/04.00-Introduction-To-Matplotlib_30_0.png" /></p>
+<p>It is important to note that this interface is <em>stateful</em>: it keeps track of the "current" figure and axes, which are where all <code>plt</code> commands are applied.
+You can get a reference to these using the <code>plt.gcf()</code> (get current figure) and <code>plt.gca()</code> (get current axes) routines.</p>
+<p>While this stateful interface is fast and convenient for simple plots, it is easy to run into problems.
+For example, once the second panel is created, how can we go back and add something to the first?
+This is possible within the MATLAB-style interface, but a bit clunky.
+Fortunately, there is a better way.</p>
+<h4 id="object-oriented-interface">Object-oriented interface</h4>
+<p>The object-oriented interface is available for these more complicated situations, and for when you want more control over your figure.
+Rather than depending on some notion of an "active" figure or axes, in the object-oriented interface the plotting functions are <em>methods</em> of explicit <code>Figure</code> and <code>Axes</code> objects.
+To re-create the previous plot using this style of plotting, you might do the following:</p>
+<pre><code class="language-python"># First create a grid of plots
+# ax will be an array of two Axes objects
+fig, ax = plt.subplots(2)
+
+# Call plot() method on the appropriate object
+ax[0].plot(x, np.sin(x))
+ax[1].plot(x, np.cos(x));
+</code></pre>
+<p><img alt="png" src="04.00-Introduction-To-Matplotlib_files/04.00-Introduction-To-Matplotlib_33_0.png" /></p>
+<p>For more simple plots, the choice of which style to use is largely a matter of preference, but the object-oriented approach can become a necessity as plots become more complicated.
+Throughout this chapter, we will switch between the MATLAB-style and object-oriented interfaces, depending on what is most convenient.
+In most cases, the difference is as small as switching <code>plt.plot()</code> to <code>ax.plot()</code>, but there are a few gotchas that we will highlight as they come up in the following sections.</p>
+<!--NAVIGATION-->
+<p>&lt; <a href="03.13-Further-Resources.ipynb">Further Resources</a> | <a href="Index.ipynb">Contents</a> | <a href="04.01-Simple-Line-Plots.ipynb">Simple Line Plots</a> &gt;</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
